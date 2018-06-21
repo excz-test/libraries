@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="card-body">
+    <h6 class="text-center">Listado de Productos</h6>
+    <table class="table table-sm table-hover">
+      <tbody>
+        <tr *ngFor="let product of productList">
+          <td>{{product.name}}</td>
+          <td>{{product.category}}</td>
+          <td>{{product.location}}</td>
+          <!--Revisar como poner simbolo de dinero especifico para cada usuario, algo como un parámetros-->
+          <td>{{product.price}}</td>
+          <td>
+            <a class="btn btn-secondary text-white" (click)="onEdit(product)">
+                <i class="fas fa-edit"></i>
+            </a>
+          </td>
+          <td>
+              <a class="btn btn-danger text-white" (click)="onDelete(product.$key)">
+                  <i class="fas fa-trash-alt"></i>
+              </a>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
